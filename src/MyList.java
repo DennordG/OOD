@@ -3,7 +3,7 @@ import java.util.Collections;
 
 /**
  * @author Dennord
- * @date 3/1/2018
+ * Created on 3/1/2018
  */
 public class MyList extends ArrayList<Entity> {
     public Entity getPersonWithMaxAge() {
@@ -39,7 +39,7 @@ public class MyList extends ArrayList<Entity> {
                 System.out.println(ent.getID());
     }
 
-    public Dog getDogWithMaxAge() {
+    public Entity getDogWithMaxAge() {
         MyList dogs = new MyList();
 
         for (Entity ent: this)

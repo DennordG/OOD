@@ -1,8 +1,6 @@
-import java.util.Scanner;
-
 /**
  * @author Dennord
- * @date 3/1/2018
+ * Created on 3/1/2018
  */
 public abstract class Entity implements Comparable<Entity> {
     protected Age age;

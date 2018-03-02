@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 /**
  * @author Dennord
- * @date 3/1/2018
+ * Created on 3/1/2018
  */
 public class Person extends Entity {
     public Person(Age age, String name) {

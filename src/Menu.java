@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 /**
  * @author Dennord
- * @date 2/28/2018
+ * Created on 2/28/2018
  */
 public class Menu {
     private Scanner scanner;
@@ -33,6 +33,15 @@ public class Menu {
         acro.add("ALLB");
     }
 
+    private void loadDogOptions() {
+        options.add("Add dog");
+        acro.add("ADDD");
+        options.add("Find dog with max age");
+        acro.add("MAXD");
+        options.add("Find all dogs with age above a specified one");
+        acro.add("ALLD");
+    }
+
     private void loadEntityOptions() {
         options.add("Find entity with max age");
         acro.add("MAXE");
@@ -51,9 +60,10 @@ public class Menu {
 
         loadPersonOptions();
         loadBuildingOptions();
+        loadDogOptions();
         loadEntityOptions();
 
-        entList = new MyList<>();
+        entList = new MyList();
     }
 
     private void judge(String option) {
@@ -67,7 +77,7 @@ public class Menu {
                 print(entList.getPersonWithMaxAge().getID());
                 break;
             case "ALLP":
-                entList.printAllPersonsWithAge(Age.create());
+                entList.printAllPersonsWithAge(ClassicalAge.create());
                 break;
             case "ADDB":
                 entList.add(Building.create());
@@ -76,13 +86,22 @@ public class Menu {
                 print(entList.getBuildingWithMaxAge().getID());
                 break;
             case "ALLB":
-                entList.printAllBuildingsWithAge(Age.create());
+                entList.printAllBuildingsWithAge(ClassicalAge.create());
+                break;
+            case "ADDD":
+                entList.add(Dog.create());
+                break;
+            case "MAXD":
+                print(entList.getDogWithMaxAge().getID());
+                break;
+            case "ALLD":
+                entList.printAllDogsWithAge(DogAge.create());
                 break;
             case "MAXE":
                 print(entList.getEntityWithMaxAge().getID());
                 break;
             case "ALLE":
-                entList.printAllEntitiesWithAge(Age.create());
+                entList.printAllEntitiesWithAge(ClassicalAge.create());
                 break;
         }
     }
@@ -94,7 +113,7 @@ public class Menu {
         print("Choose option:");
         int option = scanner.nextInt();
 
-        while (option < 0 && option >= options.size()) {
+        while (option < 0 || option >= options.size()) {
             print("Please choose a valid option:");
             option = scanner.nextInt();
         }

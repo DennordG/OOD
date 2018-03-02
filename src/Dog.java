@@ -1,5 +1,9 @@
 import java.util.Scanner;
 
+/**
+ * @author Dennord
+ * Created on 3/1/2018
+ */
 public class Dog extends Entity {
     public Dog(Age age, String name) {
         this.age = age;

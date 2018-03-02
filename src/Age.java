@@ -1,13 +1,13 @@
 /**
  * @author Dennord
- * @date 3/1/2018
+ * Created on  3/1/2018
  */
 public interface Age {
-    public int getY();
-    public int getM();
-    public int getD();
-    public int compareTo(Age o);
-    public int realCompareTo(Age o);
-    public Age getRelativeValue();
-    public Age getAbsoluteValue();
+    int getY();
+    int getM();
+    int getD();
+    int compareTo(Age o);
+    int realCompareTo(Age o);
+    Age getRelativeValue();
+    Age getAbsoluteValue();
 }
