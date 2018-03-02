@@ -9,7 +9,7 @@ public class Menu {
     private Scanner scanner;
     private ArrayList<String> options;
     private ArrayList<String> acro;
-    private MyList<Entity> entList;
+    private MyList entList;
 
     private static void print(String str) {
         System.out.println(str);
@@ -51,7 +51,7 @@ public class Menu {
 
         loadPersonOptions();
         loadBuildingOptions();
-        //loadEntityOptions();
+        loadEntityOptions();
 
         entList = new MyList<>();
     }
@@ -78,12 +78,12 @@ public class Menu {
             case "ALLB":
                 entList.printAllBuildingsWithAge(Age.create());
                 break;
-            /*case "MAXE":
-                entList.getEntityWithMaxAge().getID();
+            case "MAXE":
+                print(entList.getEntityWithMaxAge().getID());
                 break;
             case "ALLE":
-                print(entList.printAllEntitiesWithMaxAge().getID());
-                break;*/
+                entList.printAllEntitiesWithAge(Age.create());
+                break;
         }
     }
 

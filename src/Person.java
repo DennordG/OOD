@@ -4,16 +4,16 @@ import java.util.Scanner;
  * @author Dennord
  * @date 3/1/2018
  */
-public class Person extends Entity implements Comparable<Entity> {
+public class Person extends Entity {
     public Person(Age age, String name) {
-        super(age);
+        this.age = age;
         this.ID = name;
     }
 
     public static Person create() {
         Scanner scanner = new Scanner(System.in);
 
-        Age age = Age.create();
+        Age age = ClassicalAge.create();
         String name;
 
         System.out.println("Insert name of person:");
